@@ -1,0 +1,43 @@
+<?php
+/** @var \Jbdev\CurrencyConverter\Helper\Data $helper */
+$helper = $this->helper(\Jbdev\CurrencyConverter\Helper\Data::class);
+?>
+<div class="block block-convert">
+    <div class="block block-title"><strong><?= /* @escapeNotVerified */ __('Converter') ?></strong></div>
+    <div class="block block-content">
+        <form class="form converter" id="converter_form" action="<?= /* @escapeNotVerified */ $helper->getConvertUrl() ?>" method="get">
+            <div class="field convert">
+                <label class="label" for="convert" data-role="converter-label">
+                    <span><?= /* @escapeNotVerified */ __('RUB') ?></span>
+                </label>
+                <div class="control">
+                    <input id="convert"
+                           data-mage-init='{"converter":{
+                                "formSelector":"#converter_form",
+                                "inputSelector":"#convert",
+                                "resultArea":"#conversion_results",
+                                "url":"<?= /* @escapeNotVerified */ $helper->getConvertUrl()?>"
+                                }
+                           }'
+                           type="text"
+                           name="rub"
+                           class="input-text"
+                           role="combobox"
+                           aria-haspopup="false"
+                           aria-autocomplete="both"
+                           autocomplete="off"/>
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit"
+                        title="<?= $block->escapeHtml(__('Convert to PLN')) ?>"
+                        class="action convert">
+                    <span><?= /* @escapeNotVerified */ __('Convert to PLN') ?></span>
+                </button>
+            </div>
+            <div class="results" style="display: none">
+                    <span id="conversion_results"></span>
+            </div>
+        </form>
+    </div>
+</div>

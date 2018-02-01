@@ -1,0 +1,46 @@
+.block.block-convert {
+    max-width: 470px;
+    height: 221px;
+    width: 470px;
+    border: 1px solid #006bb4;
+    background: linear-gradient(white, #2e89d847);
+    padding-top: 23px;
+    padding-left: 23px;
+}
+
+.block-convert .block-title {
+    font-size: 40px;
+    margin-bottom: 19px!important;
+}
+.block-convert .results {
+    border: 1px solid gold;
+    width: 292px;
+    background-color: #ffd7007a;
+    text-align: center;
+    margin-top: 17px;
+}
+.block-convert .actions {
+
+    margin-left: 93px;
+    margin-top: 10px;
+}
+.block-convert button.action.convert {
+    width: 200px;
+}
+
+.field.convert {
+    display: -webkit-inline-box;
+}
+.field.convert .label{
+    vertical-align: -webkit-baseline-middle;
+    font-size: large;
+}
+
+input#convert {
+    position: relative;
+    width: 200px;
+    left: 58px;
+}
+
+
+
