@@ -3,5 +3,5 @@
 
 # install:
 - clone files to "app/code/Jbdev/CurrencyConverter"
-- run bin/magento module:enable Jbdev/CurrencyConverter
+- run bin/magento module:enable Jbdev_CurrencyConverter
 - run bin/magento setup:upgrade
