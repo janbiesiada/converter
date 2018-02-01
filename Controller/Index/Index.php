@@ -31,7 +31,6 @@ class Index extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Renders CMS Home page
      *
      * @param string|null $coreRoute
      * @return \Magento\Framework\Controller\Result\Forward
