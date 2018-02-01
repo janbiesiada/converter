@@ -1,4 +1,3 @@
-
 /**
  * @api
  */
@@ -35,7 +34,7 @@ define([
             $.getJSON(this.options.url, {}, $.proxy(function (data) {
                 var output;
                 if (data.code == 200) {
-                    var rubValue = this.input.val()||0;
+                    var rubValue = this.input.val() || 0;
                     var plnValue = rubValue * data.rate;
                     output = rubValue + " RUB = " + plnValue + " PLN";
                 } else {

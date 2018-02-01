@@ -38,7 +38,7 @@ class Index extends \Magento\Framework\App\Action\Action
      */
     public function execute($coreRoute = null)
     {
-        try{
+        try {
             $data = [
                 'code' => 200,
                 'rate' => $this->getRate(),
