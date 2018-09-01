@@ -1,17 +1,16 @@
 <?php
-/** @var \Jbdev\CurrencyConverter\Helper\Data $helper */
-$helper = $this->helper(\Jbdev\CurrencyConverter\Helper\Data::class);
+/** @var \Jbdev\CurrencyConverter\Block\Converter $helper */
+$viewModel = $block->getData('view_model');
 ?>
 <div class="block block-convert">
     <div class="block block-title"><strong><?= /* @escapeNotVerified */
             __('Converter') ?></strong></div>
     <div class="block block-content">
         <form class="form converter" id="converter_form" action="<?= /* @escapeNotVerified */
-        $helper->getConvertUrl() ?>" method="get">
+        $viewModel->getConvertUrl() ?>" method="get">
             <div class="field convert">
                 <label class="label" for="convert" data-role="converter-label">
-                    <span><?= /* @escapeNotVerified */
-                        __('RUB') ?></span>
+                    <span><?= /* @escapeNotVerified */ __('RUB') ?></span>
                 </label>
                 <div class="control">
                     <input id="convert"
@@ -20,7 +19,7 @@ $helper = $this->helper(\Jbdev\CurrencyConverter\Helper\Data::class);
                                 "inputSelector":"#convert",
                                 "resultArea":"#conversion_results",
                                 "url":"<?= /* @escapeNotVerified */
-                           $helper->getConvertUrl() ?>"
+                           $viewModel->getConvertUrl() ?>"
                                 }
                            }'
                            type="text"
@@ -34,10 +33,9 @@ $helper = $this->helper(\Jbdev\CurrencyConverter\Helper\Data::class);
             </div>
             <div class="actions">
                 <button type="submit"
-                        title="<?= $block->escapeHtml(__('Convert to PLN')) ?>"
+                        title="<?= /* @escapeNotVerified */ __('Convert to PLN') ?>"
                         class="action convert">
-                    <span><?= /* @escapeNotVerified */
-                        __('Convert to PLN') ?></span>
+                    <span><?= /* @escapeNotVerified */ __('Convert to PLN') ?></span>
                 </button>
             </div>
             <div class="results" style="display: none">
