@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Jbdev\CurrencyConverter\Api\ConverterInterface" type="Jbdev\CurrencyConverter\Model\Converter" />
+    <preference for="Jbdev\CurrencyConverter\Api\Data\RateInterface" type="Jbdev\CurrencyConverter\Model\Rate" />
+</config>

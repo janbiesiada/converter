@@ -19,7 +19,6 @@ define([
         /** @inheritdoc */
         _create: function () {
             this.convertForm = $(this.options.formSelector);
-            this.submitBtn = this.convertForm.find(this.options.submitBtn)[0];
             this.resultArea = $(this.options.resultArea);
             this.input = $(this.options.inputSelector);
             this.convertForm.on('submit', $.proxy(function () {
@@ -31,20 +30,39 @@ define([
 
         _onSubmit: function (e) {
 
-            $.getJSON(this.options.url, {}, $.proxy(function (data) {
-                var output;
-                if (data.code == 200) {
-                    var rubValue = this.input.val() || 0;
-                    var plnValue = rubValue * data.rate;
-                    output = rubValue + " RUB = " + plnValue + " PLN";
-                } else {
-                    output = data.message;
+            $.ajax({
+                url: this.options.url,
+                type: 'GET',
+                dataType: 'json',
+                data: {},
+                success: $.proxy(this._onSuccess, this),
+                error: $.proxy(this._onError, this),
+                statusCode: {
+                    500: function() {
+                        $.proxy(this._onError, this);
+                    }
                 }
-                this.resultArea.html(output)
-                this.resultArea.parent().show();
-
-            }, this));
+            });
         },
+
+        _onError: function (response) {
+            this.setMessage(response.responseJSON.message);
+        },
+
+        _onSuccess: function (response) {
+            if (!response.error) {
+                var rubValue = this.input.val() || 0;
+                var plnValue = rubValue * response.rate;
+                this.setMessage(rubValue + " RUB = " + plnValue + " PLN")
+            } else {
+                this.setMessage(response.message);
+            }
+        },
+
+        setMessage: function (output) {
+            this.resultArea.html(output)
+            this.resultArea.parent().show();
+        }
 
 
     });

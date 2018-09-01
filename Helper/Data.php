@@ -8,6 +8,6 @@ class Data extends AbstractHelper
 {
     public function getConvertUrl()
     {
-        return "/converter";
+        return "/rest/V1/converter/rate";
     }
 }
