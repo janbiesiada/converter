@@ -2,8 +2,7 @@
   "name": "jbdev/currency-converter",
   "description": "N/A",
   "require": {},
-  "suggest": {
-  },
+  "suggest": {},
   "type": "magento2-module",
   "version": "1.0.0",
   "autoload": {
@@ -13,5 +12,10 @@
     "psr-4": {
       "Jbdev\\CurrencyConverter\\": ""
     }
+  },
+  "source": {
+    "url": "git://github.com/yankers88/converter.git",
+    "type": "git",
+    "reference": "master"
   }
 }
