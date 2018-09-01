@@ -5,5 +5,4 @@
 - run:
   - composer config repositories.jbdev vcs https://github.com/yankers88/converter.git
   - composer require jbdev/currency-converter:dev-master
-- run bin/magento module:enable Jbdev_CurrencyConverter
-- run bin/magento setup:upgrade
+  - bin/magento setup:upgrade
