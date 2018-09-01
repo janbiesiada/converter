@@ -1,16 +1,17 @@
 <?php
-/** @var \Jbdev\CurrencyConverter\Block\Converter $helper */
-$viewModel = $block->getData('view_model');
+$convertUrl = $block->getData('api_url');
+if($convertUrl):
 ?>
 <div class="block block-convert">
     <div class="block block-title"><strong><?= /* @escapeNotVerified */
             __('Converter') ?></strong></div>
     <div class="block block-content">
         <form class="form converter" id="converter_form" action="<?= /* @escapeNotVerified */
-        $viewModel->getConvertUrl() ?>" method="get">
+        $convertUrl ?>" method="get">
             <div class="field convert">
                 <label class="label" for="convert" data-role="converter-label">
-                    <span><?= /* @escapeNotVerified */ __('RUB') ?></span>
+                    <span><?= /* @escapeNotVerified */
+                        __('RUB') ?></span>
                 </label>
                 <div class="control">
                     <input id="convert"
@@ -19,7 +20,7 @@ $viewModel = $block->getData('view_model');
                                 "inputSelector":"#convert",
                                 "resultArea":"#conversion_results",
                                 "url":"<?= /* @escapeNotVerified */
-                           $viewModel->getConvertUrl() ?>"
+                           $convertUrl ?>"
                                 }
                            }'
                            type="text"
@@ -33,9 +34,11 @@ $viewModel = $block->getData('view_model');
             </div>
             <div class="actions">
                 <button type="submit"
-                        title="<?= /* @escapeNotVerified */ __('Convert to PLN') ?>"
+                        title="<?= /* @escapeNotVerified */
+                        __('Convert to PLN') ?>"
                         class="action convert">
-                    <span><?= /* @escapeNotVerified */ __('Convert to PLN') ?></span>
+                    <span><?= /* @escapeNotVerified */
+                        __('Convert to PLN') ?></span>
                 </button>
             </div>
             <div class="results" style="display: none">
@@ -44,3 +47,4 @@ $viewModel = $block->getData('view_model');
         </form>
     </div>
 </div>
+<?php endif; ?>

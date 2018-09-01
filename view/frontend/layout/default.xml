@@ -3,13 +3,4 @@
     <head>
         <css src="Jbdev_CurrencyConverter/css/converter.css"/>
     </head>
-    <body>
-        <referenceContainer name="columns.top">
-            <block class="Magento\Framework\View\Element\Template" name="converter" as="converter" template="Jbdev_CurrencyConverter::converter.phtml" after="page.main.title">
-                <arguments>
-                    <argument name="view_model" xsi:type="object">Jbdev\CurrencyConverter\Block\Converter</argument>
-                </arguments>
-            </block>
-        </referenceContainer>
-    </body>
 </page>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="converter_widget" class="Jbdev\CurrencyConverter\Block\ConverterWidget" ttl="86400">
+        <label translate="true">Converter Widget</label>
+        <description translate="true">Converter Widget</description>
+        <parameters>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="Jbdev_CurrencyConverter::converter.phtml" selected="true">
+                        <label translate="true">Converter Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="api_url" xsi:type="select" required="true" visible="true">
+                <label translate="true">Convert Api</label>
+                <options>
+                    <option name="default" value="/rest/V1/converter/rate" selected="true">
+                        <label translate="true">Rub rate</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
+
